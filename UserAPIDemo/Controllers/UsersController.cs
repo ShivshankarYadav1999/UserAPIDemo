@@ -26,7 +26,7 @@ namespace UserAPIDemo.Controllers
             return Ok(users);
         }
 
-        //handle get request to get single user by id
+        //Handle get request to get single user by id
         [HttpGet("user/{Id}")]
         public async Task<ActionResult<Users>> GetUserById(int Id)
         {
@@ -36,7 +36,7 @@ namespace UserAPIDemo.Controllers
             return user;
         }
 
-        //handle post request to add one user
+        //Handle post request to add one user
         [HttpPost("user")]
         public async Task<ActionResult<Users>> Postuser(CreateUserDTO user)
         {
@@ -57,7 +57,7 @@ namespace UserAPIDemo.Controllers
             return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
         }
 
-        //handle put request to update one user 
+        //Handle put request to update one user 
         [HttpPut("user/{id}")]
         public async Task<IActionResult> PutUserById(int id, UpdateUserDTO user)
         {
@@ -75,7 +75,7 @@ namespace UserAPIDemo.Controllers
             return NoContent();
         }
 
-        //handle patch request to update one user
+        //Handle patch request to update one user
         [HttpPatch("user/{id}")]
         public async Task<IActionResult> UpdateUserById(int id, UpdateUserDTO user)
         {
@@ -100,7 +100,7 @@ namespace UserAPIDemo.Controllers
             return NoContent();
         }
 
-        //handle delete request to delete one user
+        //Handle delete request to delete one user
         [HttpDelete("user/{id}")]
         public async Task<IActionResult> DeleteUserById(int id)
         {
